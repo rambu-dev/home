@@ -1,2 +1,0 @@
-# homepage
-Homepage for rambudev
