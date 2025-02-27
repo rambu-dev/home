@@ -1,1 +1,0 @@
-import{j as r}from"./index-DNixIoc9.js";import{A as t}from"./AppWithSidebar-DYh1X1uv.js";import"./Box-FW5voN0J.js";import"./App-DoK6gtp6.js";import"./Text-CBLuXI6c.js";const m=()=>r.jsx(t,{title:"Dashboard"});export{m as default};
