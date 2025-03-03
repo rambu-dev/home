@@ -1,0 +1,1 @@
+import{j as t}from"./index-udEVNCrR.js";const n=e=>{const{children:r,className:s}=e;return t.jsx("div",{className:`text-primary flex flex-col font-monsterrat w-screen h-screen overflow-hidden ${s}`,children:r})};export{n as A};
