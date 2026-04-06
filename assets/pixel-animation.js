@@ -341,10 +341,10 @@
   function drawPebbles() {
     ctx.fillStyle = GRAY_3;
     for (var i = 0; i < 25; i++) {
-      var px_x = ((i * 67 + 23 - scrollX * 1.5) % (LOGICAL_W * 2) + LOGICAL_W * 2) % (LOGICAL_W * 2) - 20;
-      if (px_x < 0 || px_x > LOGICAL_W) continue;
-      var py_y = LOGICAL_H * 0.72 + 4 + (i % 5) * 2;
-      ctx.fillRect(Math.floor(px_x), Math.floor(py_y), 2 + (i % 3), 1);
+      var pebbleX = ((i * 67 + 23 - scrollX * 1.5) % (LOGICAL_W * 2) + LOGICAL_W * 2) % (LOGICAL_W * 2) - 20;
+      if (pebbleX < 0 || pebbleX > LOGICAL_W) continue;
+      var pebbleY = LOGICAL_H * 0.72 + 4 + (i % 5) * 2;
+      ctx.fillRect(Math.floor(pebbleX), Math.floor(pebbleY), 2 + (i % 3), 1);
     }
   }
 
