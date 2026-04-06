@@ -4,7 +4,8 @@
   /* ───────── constants ───────── */
   var LOGICAL_W = 320;
   var LOGICAL_H = 100;
-  var FPS = 10;
+  var FPS = 10; /* intentionally low for retro 8-bit feel */
+  var SCROLL_SPEED = 1.5;
 
   /* ───────── colour palette (8-bit feel) ───────── */
   var SKY_TOP = "#1a1a2e";
@@ -80,7 +81,7 @@
       trees.push({ x: randInt(0, LOGICAL_W * 4), h: randInt(8, 18) });
     }
 
-    loop();
+    requestAnimationFrame(loop);
   }
 
   /* ───────── sky gradient ───────── */
@@ -436,14 +437,20 @@
     drawFlowers();
     drawBicycleBoy();
 
-    scrollX += 1.5;
+    scrollX += SCROLL_SPEED;
     frame++;
   }
 
-  /* ───────── loop ───────── */
-  function loop() {
-    render();
-    setTimeout(loop, 1000 / FPS);
+  /* ───────── loop (throttled rAF for retro feel) ───────── */
+  var lastTime = 0;
+  var frameDuration = 1000 / FPS;
+
+  function loop(timestamp) {
+    if (timestamp - lastTime >= frameDuration) {
+      lastTime = timestamp - ((timestamp - lastTime) % frameDuration);
+      render();
+    }
+    requestAnimationFrame(loop);
   }
 
   /* ───────── kick off ───────── */
